@@ -8,9 +8,9 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "prettier/airbnb",
-    "prettier/react"
+    "prettier"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -24,6 +24,15 @@
   ],
   "rules": {
     "prettier/prettier": "error",
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
   }
 }
