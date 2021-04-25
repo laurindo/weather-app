@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { WrapperCard } from './styles'
 
-function Card({ children, onClick }) {
-  return <WrapperCard onClick={onClick}>{children}</WrapperCard>
+function Card({ children, ...props }) {
+  return <WrapperCard {...props}>{children}</WrapperCard>
 }
 
 Card.defaultProps = {

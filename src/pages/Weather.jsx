@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import Section from '../components/Section'
 import Label from '../components/Label'
 import WeatherCondition from '../components/WeatherCondition'
-import { millisecondsToDate } from '../utils/Date'
+import { millisecondsToDate, weekName } from '../utils/Date'
 import { trimAndLowerText } from '../utils/Text'
 
 const Detail = styled.div`
@@ -21,13 +21,16 @@ const Temperature = styled.div`
 `
 
 function Weather() {
-  const { nameOfDay } = useParams()
   const {
     location: { state }
   } = useHistory()
+
+  const date = millisecondsToDate(state.dt).getDay()
+  const dayName = weekName(date).name
+
   return (
     <Section>
-      <h1>Day: {nameOfDay}</h1>
+      <h1>{dayName}</h1>
       <Detail>
         <Temperature>
           <WeatherCondition

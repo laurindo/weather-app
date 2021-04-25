@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
@@ -8,16 +8,17 @@ import Home from './pages/Home'
 import GlobalStyle from './styles/global'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
+import Label from './components/Label'
 
-export default function App() {
-  const theme = useSelector(state => state.theme)
-
+function App({ theme }) {
   return (
     <ThemeProvider theme={theme === 'dark' ? dark : light}>
       <Router>
         <GlobalStyle />
         <Switch>
-          <Header />
+          <Header>
+            <Label size="sm">Weather App</Label>
+          </Header>
         </Switch>
         <Switch>
           <Route path="/">
@@ -28,3 +29,5 @@ export default function App() {
     </ThemeProvider>
   )
 }
+
+export default connect(state => ({ theme: state.theme }))(App)

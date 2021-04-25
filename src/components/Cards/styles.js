@@ -1,11 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const WrapperContainerCard = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   padding: 10px;
-  border: solid 1px white;
 `
 
 export const WrapperCard = styled.div`
@@ -16,6 +15,14 @@ export const WrapperCard = styled.div`
   background-color: ${props => props.theme.colors.backgroundMedium};
   min-height: 200px;
   border-radius: 5px;
+  cursor: pointer;
+  ${props =>
+    props.selected &&
+    css`
+      background-color: #06314a;
+      border-bottom: solid 1px #a95cdc;
+      box-shadow: #8c18d857 0px 20px 55px 0px;
+    `}
 `
 
 export const WrapperCardFooter = styled.div`
