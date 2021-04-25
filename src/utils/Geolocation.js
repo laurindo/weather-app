@@ -4,4 +4,11 @@ function getPosition(options) {
   )
 }
 
+export const geolocation = {
+  getPosition: () =>
+    new Promise((resolve, reject) =>
+      navigator.geolocation.getCurrentPosition(resolve, reject)
+    )
+}
+
 export { getPosition }

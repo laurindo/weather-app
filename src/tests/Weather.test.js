@@ -53,7 +53,7 @@ describe('Weather', () => {
       },
       getForecastWeather
     )
-    expect(dispatched[0].payload).toBe(null)
+    expect(dispatched[0].payload.error).toBe('geolocation.not.allowed')
     expect(requestWeather).toHaveBeenCalledTimes(1)
     expect(dispatched[0]).toEqual(actions.setWeatherError())
   })

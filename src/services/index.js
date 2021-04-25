@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 export const api = {
-  getWeather: async (lat = -27.470125, long = 153.021072) => {
-    const query = `lat=${lat}&lon=${long}&exclude=minutely,hourly&units=metric&appid=${process.env.REACT_APP_WEATHER_KEY}`
+  getWeather: async ({ latitude = -27.470125, longitude = 153.021072 }) => {
+    const query = `lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=metric&appid=${process.env.REACT_APP_WEATHER_KEY}`
     const response = await axios.get(
       `${process.env.REACT_APP_WEATHER_API}/onecall?${query}`
     )
