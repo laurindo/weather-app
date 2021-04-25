@@ -1,3 +1,6 @@
+# API
+# http://api.openweathermap.org/data/2.5/onecall?lat=54.906101&lon=-1.381130&exclude=minutely,hourly&appid=98f92ed36c31b9aad8f6eed45d3602bc
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

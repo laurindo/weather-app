@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { WrapperCardFooter } from './styles'
+import Wrapper from './styles'
 
-function Card({ children }) {
-  return <WrapperCardFooter>{children}</WrapperCardFooter>
+function Header({ children }) {
+  return <Wrapper>{children}</Wrapper>
 }
 
-Card.propTypes = {
+Header.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired
 }
 
-export default Card
+export default Header

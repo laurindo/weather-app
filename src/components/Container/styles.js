@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const Container = styled.main`
-  background: ${props => props.color.}
-`;
+const Container = styled.main`
+  background: ${props => props.color.primary};
+`
+
+export default Container

@@ -25,6 +25,8 @@
   "rules": {
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       1,
       {
