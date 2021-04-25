@@ -1,11 +1,14 @@
 import { put, call, fork, all } from 'redux-saga/effects'
 import * as actions from '../actions'
-// import { getWeather } from '../reducers'
 import { api } from '../../services'
 
 export function* getForecastWeather() {
-  const weather = yield call(api.getWeather)
-  yield put(actions.setWeather(weather))
+  try {
+    const weather = yield call(api.getWeather)
+    yield put(actions.setWeather(weather))
+  } catch (error) {
+    yield put(actions.setWeatherError())
+  }
 }
 
 export default function* root() {

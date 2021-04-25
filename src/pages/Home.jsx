@@ -18,11 +18,11 @@ import { millisecondsToDate, weekName } from '../utils/Date'
 function Home({ weather }) {
   const [indexSelected, setIndexSelected] = useState(null)
   const history = useHistory()
-  if (!weather) return null
+  if (!weather) return <div>loading...</div>
   const forecastDays = weather.daily.slice(0, 5)
   return (
     <Section>
-      <ContainerCard>
+      <ContainerCard data-testid="container-card">
         {forecastDays.map((forecastDay, index) => {
           const date = millisecondsToDate(forecastDay.dt).getDay()
           const dayName = weekName(date).short

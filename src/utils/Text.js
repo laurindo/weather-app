@@ -1,5 +1,5 @@
 function trimAndLowerText(text = '') {
-  return text.replaceAll(' ', '').toLowerCase()
+  return text.replace(/ /g, '').toLowerCase()
 }
 
 export { trimAndLowerText }

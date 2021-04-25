@@ -7,7 +7,6 @@ function Label({ children, ...props }) {
 }
 
 Label.propTypes = {
-  bold: PropTypes.bool.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
