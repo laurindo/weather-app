@@ -8,7 +8,7 @@ function Card({ children, ...props }) {
 
 Card.defaultProps = {
   onClick: () => {
-    console.log('click')
+    window.console.log('click')
   }
 }
 

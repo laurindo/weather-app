@@ -4,4 +4,4 @@ function getPosition(options) {
   )
 }
 
-export default getPosition
+export { getPosition }

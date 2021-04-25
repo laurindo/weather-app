@@ -8,10 +8,11 @@ const sizes = {
   xl: 5
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.label`
   font-weight: ${props => (props.bold ? 700 : 'normal')};
   margin: 10px 5px;
   font-size: ${props => `${sizes[props.size]}em`};
+  display: ${props => (props.block ? 'block' : 'initial')};
 `
 
 export default Wrapper

@@ -36,14 +36,17 @@ function Weather() {
           <WeatherCondition
             condition={trimAndLowerText(state.weather[0].main)}
           />
-          <Label size="lg">{state.current.temp}°</Label>
+          <Label size="lg">{state.temp.day}°</Label>
         </Temperature>
         <div>
-          <Label>
-            Sunrise: {millisecondsToDate(state.sunrise).toISOString()}
+          <Label block size="sm">
+            Clouds: <Label bold>{state.clouds}%</Label>
           </Label>
-          <Label>
-            Sunset: {millisecondsToDate(state.sunset).toISOString()}
+          <Label block size="sm">
+            Humidity: <Label bold>{state.humidity}%</Label>
+          </Label>
+          <Label block size="sm">
+            Wind: <Label bold>{state.wind_speed} km/h</Label>
           </Label>
         </div>
       </Detail>

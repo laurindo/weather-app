@@ -12,7 +12,9 @@ export function setWeather(weather) {
 export function setWeatherError() {
   return {
     type: SET_WEATHER_ERROR,
-    payload: null
+    payload: {
+      error: 'geolocation.not.allowed'
+    }
   }
 }
 
