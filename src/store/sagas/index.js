@@ -11,7 +11,6 @@ export function* getForecastWeather() {
     yield put(actions.setWeather(weather))
     yield put(actions.setCoords(coords))
   } catch (error) {
-    console.error(error)
     yield put(actions.setWeatherError())
   }
 }
