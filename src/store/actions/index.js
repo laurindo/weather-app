@@ -1,6 +1,14 @@
+export const SET_COORDS = 'SET_COORDS'
 export const SET_WEATHER = 'SET_WEATHER'
 export const SET_WEATHER_ERROR = 'SET_WEATHER_ERROR'
 export const SET_THEME = 'SET_THEME'
+
+export function setCoords(coords) {
+  return {
+    type: SET_COORDS,
+    payload: coords
+  }
+}
 
 export function setWeather(weather) {
   return {

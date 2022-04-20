@@ -21,6 +21,7 @@ import { millisecondsToDate, weekName } from '../utils/Date'
 function Home({ weather }) {
   const [indexSelected, setIndexSelected] = useState(null)
   const history = useHistory()
+
   if (!weather)
     return (
       <Loading>
@@ -28,7 +29,7 @@ function Home({ weather }) {
       </Loading>
     )
 
-  if (weather && weather.error)
+  if (weather && weather.error) {
     return (
       <div>
         <img src={sad} alt="error on try to get geolocation coords" />
@@ -37,6 +38,7 @@ function Home({ weather }) {
         </Label>
       </div>
     )
+  }
 
   const forecastDays = weather.daily.slice(0, 5)
   return (
@@ -84,5 +86,6 @@ function Home({ weather }) {
 }
 
 export default connect(state => ({
-  weather: state.weather
+  weather: state.weather,
+  coords: state.coords
 }))(Home)
