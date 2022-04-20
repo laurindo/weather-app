@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/2501144/164290428-4e3918e1-7046-4fb7-837b-54a5e1653767.png)
 
-### Weather  App
+# Weather  App
 
 ## DEMO
 [https://laurindo-weather-app.herokuapp.com/](https://laurindo-weather-app.herokuapp.com/)
