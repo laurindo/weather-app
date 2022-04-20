@@ -7,7 +7,7 @@ export function* getForecastWeather() {
   try {
     // I'm having issues to mock this request on Weather.test.js
     const { coords } = yield call(geolocation.getPosition)
-    const weather = yield call(api.getWeather, {})
+    const weather = yield call(api.getWeather, coords)
     yield put(actions.setWeather(weather))
     yield put(actions.setCoords(coords))
   } catch (error) {
