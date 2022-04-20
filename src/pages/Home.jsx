@@ -14,7 +14,7 @@ import Badge from '../components/Badge'
 // Pages
 import Weather from './Weather'
 // Resources
-import sad from '../assets/sad.png'
+// import sad from '../assets/sad.png'
 import { trimAndLowerText } from '../utils/Text'
 import { millisecondsToDate, weekName } from '../utils/Date'
 
@@ -28,17 +28,6 @@ function Home({ weather }) {
         <Label>loading...</Label>
       </Loading>
     )
-
-  if (weather && weather.error) {
-    return (
-      <div>
-        <img src={sad} alt="error on try to get geolocation coords" />
-        <Label size="sm" block>
-          Looks like you should allow geolocation permission
-        </Label>
-      </div>
-    )
-  }
 
   const forecastDays = weather.daily.slice(0, 5)
   return (
