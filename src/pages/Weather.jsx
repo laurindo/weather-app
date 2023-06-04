@@ -25,8 +25,8 @@ function Weather() {
     location: { state }
   } = useHistory()
 
-  const date = millisecondsToDate(state.dt).getDay()
-  const dayName = weekName(date).name
+  const date = millisecondsToDate(state?.dt).getDay()
+  const dayName = date ? weekName(date).name : ''
 
   return (
     <Section>
@@ -34,19 +34,19 @@ function Weather() {
       <Detail>
         <Temperature>
           <WeatherCondition
-            condition={trimAndLowerText(state.weather[0].main)}
+            condition={trimAndLowerText(state?.weather[0].main || '')}
           />
-          <Label size="lg">{state.temp.day}°</Label>
+          <Label size="lg">{state?.temp.day}°</Label>
         </Temperature>
         <div>
           <Label block size="sm">
-            Clouds: <Label bold>{state.clouds}%</Label>
+            Clouds: <Label bold>{state?.clouds}%</Label>
           </Label>
           <Label block size="sm">
-            Humidity: <Label bold>{state.humidity}%</Label>
+            Humidity: <Label bold>{state?.humidity}%</Label>
           </Label>
           <Label block size="sm">
-            Wind: <Label bold>{state.wind_speed} km/h</Label>
+            Wind: <Label bold>{state?.wind_speed} km/h</Label>
           </Label>
         </div>
       </Detail>
