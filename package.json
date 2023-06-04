@@ -2,7 +2,7 @@
   "name": "weather-app",
   "homepage": "https://laurindo.github.io/weather-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@redux-saga/simple-saga-monitor": "^1.1.2",
     "@reduxjs/toolkit": "^1.5.1",
